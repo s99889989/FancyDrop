@@ -1,0 +1,12 @@
+name: FancyDrop
+version: @version@
+main: com.daxton.fancydrop.FancyDrop
+api-version: 1.13
+prefix: FancyDrop
+softdepend: [FancyCore]
+authors: [ s99889989 ]
+description: drop
+commands:
+  fancydrop:
+    description: Basic instructions.
+    aliases: fdrop
