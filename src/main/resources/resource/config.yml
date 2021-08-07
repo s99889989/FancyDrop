@@ -1,0 +1,20 @@
+#語言(英語,繁體中文,簡體中文,巴西葡萄牙語,韓語)
+#Language (English,Chinese_TW,Chinese_CN,Portuguese_BR,Korean_KR)
+Language: English
+
+
+ItemSettings:
+  #物品分配方式(LastDamage、Random、MaxThreat)
+  #Item distribution method.(LastDamage、Random、MaxThreat)
+  ItemAllocation: 'Random'
+
+  #物品掉落顯示
+  #Item drop display
+  ItemShow:
+    #是否顯示
+    #Whether to show
+    Enable: true
+    #顯示的名稱(%player_name%=玩家名稱、%item_name%=物品名稱、%item_amount%=物品數量)
+    #Displayed name (%player_name%=player name, %item_name%=item name, %item_amount%=number of items)
+    Display: '§f[§a%player_name%§f] %item_name%§7x%item_amount%'
+

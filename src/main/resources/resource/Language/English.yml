@@ -1,0 +1,10 @@
+LogMessage:
+  Reload: '§aRe-read the configuration file.'
+  NotLoadFancyCore:
+    - '*** FancyCore is not installed or not enabled. ***'
+    - '*** FancyDrop will be disabled. ***'
+  NotLoadFancyMobs:
+    - '*** FancyMobs is not installed or not enabled. ***'
+    - '*** FancyDrop will be disabled. ***'
+OpMessage:
+  Reload: '§e[FancyDrop] §aRe-read the configuration file.'

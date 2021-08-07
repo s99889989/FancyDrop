@@ -1,0 +1,10 @@
+Language:
+  Reload: '§aLeia novamente o arquivo de configuração.'
+  NotLoadFancyCore:
+    - '*** FancyCore não está instalado ou não está habilitado. ***'
+    - '*** FancyDrop será desativado. ***'
+  NotLoadFancyMobs:
+    - '*** FancyMobs não está instalado ou não está habilitado. ***'
+    - '*** FancyDrop será desativado. ***'
+OpMessage:
+  Reload: '§e[FancyDrop] §aLeia novamente o arquivo de configuração.'

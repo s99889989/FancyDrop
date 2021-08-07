@@ -2,7 +2,7 @@ package com.daxton.fancydrop;
 
 import com.daxton.fancydrop.command.MainCommand;
 import com.daxton.fancydrop.command.TabCommand;
-import com.daxton.fancydrop.listener.PlayerListener;
+import com.daxton.fancydrop.listener.FancyMobListener;
 import com.daxton.fancydrop.task.Start;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -28,7 +28,7 @@ public final class FancyDrop extends JavaPlugin {
 		//開服執行任務
 		Start.execute();
 		//監聽
-		Bukkit.getPluginManager().registerEvents(new PlayerListener(), fancyDrop);
+		Bukkit.getPluginManager().registerEvents(new FancyMobListener(), fancyDrop);
 	}
 
 	@Override

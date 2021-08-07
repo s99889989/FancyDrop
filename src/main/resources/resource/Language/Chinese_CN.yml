@@ -1,0 +1,10 @@
+LogMessage:
+  Reload: '§a重新读取设定档。'
+  NotLoadFancyCore:
+    - '*** FancyCore未安装或未启用。***'
+    - '*** FancyDrop将被卸载。 ***'
+  NotLoadFancyMobs:
+    - '*** FancyMobs未安装或未启用。 ***'
+    - '*** FancyDrop将被卸载。 ***'
+OpMessage:
+  Reload: '§e[FancyDrop] §a重新讀取設定檔。'

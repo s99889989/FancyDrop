@@ -1,8 +1,11 @@
 package com.daxton.fancydrop;
 
 
+import com.daxton.fancydrop.listener.PlayerListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+
+import static com.daxton.fancydrop.config.FileConfig.languageConfig;
 
 public class DependPlugins {
 
@@ -13,13 +16,20 @@ public class DependPlugins {
         if (Bukkit.getServer().getPluginManager().getPlugin("FancyCore") != null && Bukkit.getPluginManager().isPluginEnabled("FancyCore")){
             fancyDrop.getLogger().info(ChatColor.GREEN+"Loaded FancyCore");
         }else {
-            fancyDrop.getLogger().severe("*** FancyCore is not installed or not enabled. ***");
-            fancyDrop.getLogger().severe("*** FancyItemsy will be disabled. ***");
-            fancyDrop.getLogger().severe("*** FancyCore未安裝或未啟用。 ***");
-            fancyDrop.getLogger().severe("*** FancyItems將被卸載。 ***");
+            languageConfig.getStringList("LogMessage.NotLoadFancyCore").forEach(message->{
+                fancyDrop.getLogger().severe(message);
+            });
             return false;
         }
-
+        if (Bukkit.getServer().getPluginManager().getPlugin("FancyMobs") != null) {
+            fancyDrop.getLogger().info(ChatColor.GREEN+"Loaded FancyMobs");
+            Bukkit.getPluginManager().registerEvents(new PlayerListener(), fancyDrop);
+        }else {
+            languageConfig.getStringList("LogMessage.NotLoadFancyMobs").forEach(message->{
+                fancyDrop.getLogger().severe(message);
+            });
+            return false;
+        }
         return true;
     }
 
