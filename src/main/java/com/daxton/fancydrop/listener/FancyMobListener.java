@@ -1,7 +1,6 @@
 package com.daxton.fancydrop.listener;
 
-import com.daxton.fancycore.api.task.PackEntity;
-import com.daxton.fancydrop.FancyDrop;
+import com.daxton.fancycore.other.task.PackEntity;
 import com.daxton.fancydrop.config.FileConfig;
 import com.daxton.fancymobs.api.FancyMob;
 import com.daxton.fancymobs.api.event.FancyMobDeathEvent;
@@ -57,7 +56,7 @@ public class FancyMobListener implements Listener {
                    item.setItemStack(itemStack);
                    item.setOwner(uuid);
                    if(itemNameEnable){
-                       PackEntity.setName(item.getEntityId(), itemShowName.replace("%player_name%", Objects.requireNonNull(Bukkit.getPlayer(uuid)).getName()).replace("%item_amount%", String.valueOf(amount)).replace("%item_name%", itemName));
+                       PackEntity.setName(item.getEntityId(), itemShowName.replace("%player_name%", Objects.requireNonNull(Bukkit.getPlayer(uuid)).getName()).replace("%item_amount%", String.valueOf(amount)).replace("%item_name%", itemName), true);
                    }
                }
            }
@@ -82,7 +81,7 @@ public class FancyMobListener implements Listener {
                     item.setItemStack(itemStack);
                     item.setOwner(mastUUID);
                     if(itemNameEnable){
-                        PackEntity.setName(item.getEntityId(), itemShowName.replace("%player_name%", Objects.requireNonNull(Bukkit.getPlayer(mastUUID)).getName()).replace("%item_amount%", String.valueOf(amount)).replace("%item_name%", itemName));
+                        PackEntity.setName(item.getEntityId(), itemShowName.replace("%player_name%", Objects.requireNonNull(Bukkit.getPlayer(mastUUID)).getName()).replace("%item_amount%", String.valueOf(amount)).replace("%item_name%", itemName), true);
                     }
                 }
             }
@@ -97,11 +96,14 @@ public class FancyMobListener implements Listener {
                 item.setItemStack(itemStack);
                 item.setOwner(killerUUID);
                 if(itemNameEnable){
-                    PackEntity.setName(item.getEntityId(), itemShowName.replace("%player_name%", killer.getName()).replace("%item_amount%", String.valueOf(amount)).replace("%item_name%", itemName));
+                    PackEntity.setName(item.getEntityId(), itemShowName.replace("%player_name%", killer.getName()).replace("%item_amount%", String.valueOf(amount)).replace("%item_name%", itemName), true);
                 }
             });
         }
         event.removeItems();
+
+        //killer.sendMessage("總金額: "+Currency.getMoneyAmount(killer));
+
 //        List<ItemStack> dropItems = new ArrayList<>();
 //        dropItems.add(new ItemStack(Material.PLAYER_HEAD));
 //        event.setDropItems(dropItems);
